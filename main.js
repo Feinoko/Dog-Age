@@ -18,7 +18,12 @@ launchBox.addEventListener('click', convertDog);
 
 function convertDog() {
    let humanAge = Number(prompt('how old are you?'));
-   let firstTwoYears = (humanAge - (humanAge - 2)) * 10.5;
-   let dogAge = firstTwoYears + (humanAge - 2) * 4
-   launchBox.textContent = `your age in dog years is : ${dogAge}`;
+   if (typeof humanAge != Number || humanAge == 0) {
+      alert('Not a valid input, enter a number that is not 0, foo!');
+   } else {
+      let firstTwoYears = (humanAge - (humanAge - 2)) * 10.5;
+      let dogAge = firstTwoYears + (humanAge - 2) * 4
+      launchBox.textContent = `your age in dog years is : ${dogAge}`;
+   }
+
 }
